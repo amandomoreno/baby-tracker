@@ -5,6 +5,7 @@
 
 {% for baby in babies %}
   <div class="card">
+    <a href="{% url 'detail' baby.id %}">
     <div class="card-content">
       <span class="card-title">{{ baby.name }}</span>
       <p>Description: {{ baby.description }}</p>
@@ -14,6 +15,7 @@
         <p>Age: Little Baby</p>
       {% endif %}
     </div>
+    </a>
   </div>
 {% endfor %}
 
