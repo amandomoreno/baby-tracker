@@ -60,33 +60,34 @@
     </div>
     <!-- add changes -->
     <div class="col s6">
-        <form action="{% url 'add_changing' baby.id %}" method="post">
-            {% csrf_token %}
-            {{ changing_form.as_p }}
-            <input type="submit" class="btn" value="Add Changing">
-        </form>   
-        <br>
-        {% if baby.changed_for_today %}
-          <div class="card-panel teal-text center-align">{{baby.name}} has been changed today</div>
-        {% else %}
-          <div class="card-panel red-text center-align">{{baby.name}} might need a change</div>
-        {% endif %}    
-      <table class="striped">
-        <thead>
-          <tr><th>Date</th><th>Change</th></tr>
-        </thead>
-        <tbody>
-          {% for changing in baby.changing_set.all %}
-            <tr>
-              <td>{{changing.date}}</td>
-              <td>{{changing.get_diaper_display}}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-
+      <form action="{% url 'add_changing' baby.id %}" method="post">
+          {% csrf_token %}
+          {{ changing_form.as_p }}
+          <input type="submit" class="btn" value="Add Changing">
+      </form>   
+      <br>
+      {% if baby.changed_for_today %}
+        <div class="card-panel teal-text center-align">{{baby.name}} has been changed today</div>
+      {% else %}
+        <div class="card-panel red-text center-align">{{baby.name}} might need a change</div>
+      {% endif %}    
+    <table class="striped">
+      <thead>
+        <tr><th>Date</th><th>Change</th></tr>
+      </thead>
+      <tbody>
+        {% for changing in baby.changing_set.all %}
+          <tr>
+            <td>{{changing.date}}</td>
+            <td>{{changing.get_diaper_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
+</div>
+
+
   <hr>
 <div class="row">
   <div class="col s6">
@@ -130,6 +131,7 @@
         {% endif %}
       </div>
   <script>
+    var dateEl = document.getElementById('id_date');
     var dateEl = document.getElementById('id_date');
     M.Datepicker.init(dateEl, {
       format: 'yyyy-mm-dd',

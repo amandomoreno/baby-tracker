@@ -42,7 +42,7 @@ class Baby(models.Model):
         return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
 
     def changed_for_today(self):
-        return self.changing_set.filter(date=date.today()).count() >= len(DIAPERS)
+        return self.changing_set.filter(date=date.today()).count() >= 2
     
     class Meta:
         ordering = ['id']
