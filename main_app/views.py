@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
 from .models import Baby, Doctor, Photo
-from .forms import FeedingForm
+from .forms import FeedingForm, ChangingForm
 import os
 import uuid
 import boto3
@@ -27,7 +27,8 @@ def babies_detail(request, baby_id):
   baby = Baby.objects.get(id=baby_id)
   doctors_baby_doesnt_have = Doctor.objects.exclude(id__in = baby.doctors.all().values_list('id'))
   feeding_form = FeedingForm()
-  return render(request, 'babies/detail.html', { 'baby': baby, 'feeding_form': feeding_form, 'doctors': doctors_baby_doesnt_have
+  changing_form = ChangingForm()
+  return render(request, 'babies/detail.html', { 'baby': baby, 'feeding_form': feeding_form, 'changing_form': changing_form, 'doctors': doctors_baby_doesnt_have
  })
 
 @login_required
@@ -37,6 +38,15 @@ def add_feeding(request, baby_id):
     new_feeding = form.save(commit=False)
     new_feeding.baby_id = baby_id
     new_feeding.save()
+  return redirect('detail', baby_id=baby_id)
+
+@login_required
+def add_changing(request, baby_id):
+  form = ChangingForm(request.POST)
+  if form.is_valid():
+    new_changing = form.save(commit=False)
+    new_changing.baby_id = baby_id
+    new_changing.save()
   return redirect('detail', baby_id=baby_id)
 
 class BabyCreate(LoginRequiredMixin, CreateView):

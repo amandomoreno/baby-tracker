@@ -10,7 +10,7 @@ urlpatterns = [
   path('babies/<int:pk>/update/', views.BabyUpdate.as_view(), name='babies_update'),
   path('babies/<int:pk>/delete/', views.BabyDelete.as_view(), name='babies_delete'),
   path('babies/<int:baby_id>/add_feeding/', views.add_feeding, name='add_feeding'),
-
+  path('babies/<int:baby_id>/add_changing/', views.add_changing, name='add_changing'),
   path('doctors/', views.DoctorList.as_view(), name='doctors_index'),
   path('doctors/<int:pk>/', views.DoctorDetail.as_view(), name='doctors_detail'),
   path('doctors/create/', views.DoctorCreate.as_view(), name='doctors_create'),

@@ -10,6 +10,11 @@ MEALS = (
     ('D', 'Dinner')
 )
 
+DIAPERS = (
+    ('1', 'No. ONE'),
+    ('2', 'No. TWO')
+)
+
 class Doctor(models.Model):
     name = models.CharField(max_length=50)
     kind = models.CharField(max_length=20)
@@ -35,6 +40,9 @@ class Baby(models.Model):
 
     def fed_for_today(self):
         return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
+
+    def changed_for_today(self):
+        return self.changing_set.filter(date=date.today()).count() >= len(DIAPERS)
     
     class Meta:
         ordering = ['id']
@@ -51,6 +59,22 @@ class Feeding(models.Model):
 
   def __str__(self):
     return f"{self.get_meal_display()} on {self.date}"
+
+  class Meta:
+    ordering = ['-date']
+
+class Changing(models.Model):
+  date = models.DateField('changing date')
+  diaper = models.CharField(
+    max_length=1,
+    choices=DIAPERS,
+    default=DIAPERS[0][0]
+  )
+
+  baby = models.ForeignKey(Baby, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.get_diaper_display()} on {self.date}"
 
   class Meta:
     ordering = ['-date']
