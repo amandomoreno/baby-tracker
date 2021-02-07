@@ -12,14 +12,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-  <header class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Baby Tracker</a></li>
-        </ul>
-        <ul class="right">
-          <li><a href="{% url 'about' %}">About</a></li>
+  <header>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
             <li><a href="{% url 'doctors_create' %}">Add a Doctor</a></li>
             <li><a href="{% url 'doctors_index' %}">View All Doctors</a></li>
@@ -30,6 +25,14 @@
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
             <li><a href="{% url 'login' %}">Log In</a></li>
           {% endif %}
+      </ul>
+    <nav>
+      <div class="nav-wrapper indigo lighten-4">
+        <ul>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Baby Tracker</a></li>
+        </ul>
+        <ul class="right">
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Menu<i class="material-icons right"></i></a></li>
         </ul>
       </div>
     </nav>
@@ -38,8 +41,11 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="page-footer">
+  <footer class="page-footer indigo lighten-4">
     <div class="right">All Rights Reserved, &copy; 2021 Baby Tracker &nbsp;</div>
   </footer>
 </body>
+<script>
+    $(".dropdown-trigger").dropdown();
+</script>
 </html>

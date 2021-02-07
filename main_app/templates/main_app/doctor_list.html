@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>List of Doctors</h1>
+<h1 class="indigo-text">List of Doctors</h1>
 
 {% for doctor in doctor_list %}
   <a href="{% url 'doctors_detail' doctor.id %}">
-    <div class="card">
-        <div class="card-content">
+    <div class="card indigo lighten-2">
+        <div class="card-content white-text">
             <span class="card-title">{{ doctor.name }}</span>
             <p>Kind: {{ doctor.kind }}</p>
         </div>

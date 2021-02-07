@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Doctor Details</h1>
+<h1 class="indigo-text">Doctor Details</h1>
 
 <div class="row">
   <div class="col s6 col-offset-3">
-    <div class="card">
-      <div class="card-content">
+    <div class="card indigo lighten-2">
+      <div class="card-content white-text">
         <span class="card-title">{{ doctor.name }}</span>
         <p>Kind: {{ doctor.kind }}</p>
       </div>
       <div class="card-action">
-        <a href="{% url 'doctors_update' doctor.id %}">Edit</a>
-        <a href="{% url 'doctors_delete' doctor.id %}">Delete</a>
+        <a class="black-text" href="{% url 'doctors_update' doctor.id %}">Edit</a>
+        <a class="pink-text" href="{% url 'doctors_delete' doctor.id %}">Delete</a>
       </div>
     </div>
   </div>
