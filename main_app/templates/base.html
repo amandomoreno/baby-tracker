@@ -8,22 +8,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Baby Tracker</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <header>
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a class="indigo-text" href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'doctors_create' %}">Add a Doctor</a></li>
-            <li><a href="{% url 'doctors_index' %}">View All Doctors</a></li>
-            <li><a href="{% url 'babies_create' %}">Add a Baby</a></li>
-            <li><a href="{% url 'index' %}">View All My Babies</a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            <li><a class="indigo-text" href="{% url 'doctors_create' %}">Add Doctor</a></li>
+            <li><a class="indigo-text" href="{% url 'doctors_index' %}">Doctors</a></li>
+            <li><a class="indigo-text" href="{% url 'babies_create' %}">Add Baby</a></li>
+            <li><a class="indigo-text" href="{% url 'index' %}">My Babies</a></li>
+            <li><a class="indigo-text" href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a class="indigo-text" href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a class="indigo-text" href="{% url 'login' %}">Log In</a></li>
           {% endif %}
       </ul>
     <nav>
@@ -49,4 +49,4 @@
 <script>
     var elDropdown = document.querySelectorAll('.dropdown-trigger');
     M.Dropdown.init(elDropdown);
-  </script>
+</script>

@@ -4,7 +4,7 @@
 <h1 class="indigo-text">Baby's Profile</h1>
 
 <div class="row">
-    <div class="col s6">
+    <div class="col s12">
       <div class="card">
         <div class="card-content indigo lighten-2">
           <span class="card-title white-text">{{ baby.name }}</span>
@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="col s6">
+    <div class="col s12">
         <form action="{% url 'add_feeding' baby.id %}" method="post">
             {% csrf_token %}
             {{ feeding_form.as_p }}
@@ -59,7 +59,7 @@
       </table>
     </div>
     <!-- add changes -->
-    <div class="col s6">
+    <div class="col s12">
       <form action="{% url 'add_changing' baby.id %}" method="post">
           {% csrf_token %}
           {{ changing_form.as_p }}
@@ -90,7 +90,7 @@
 
   <hr>
 <div class="row">
-  <div class="col s6">
+  <div class="col s12">
     <h3 class="indigo-text">{{ baby.name }}'s Doctors</h3>
     {% if baby.doctors.count %}
       {% for doctor in baby.doctors.all %}
@@ -107,7 +107,7 @@
       <h5>No Doctors</h5>
     {% endif %}
 </div>
-    <div class="col s6">
+    <div class="col s12">
         <h3 class="indigo-text">Available Doctors</h3>
         {% if doctors.count %}
           {% for doctor in doctors.all %}
