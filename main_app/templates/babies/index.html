@@ -1,22 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="indigo-text">My Babies</h1>
-
-{% for baby in babies %}
-  <div class="card">
-    <a href="{% url 'detail' baby.id %}">
-    <div class="card-content indigo lighten-2">
-      <span class="card-title white-text">{{ baby.name }}</span>
-      <p class="white-text">Description: {{ baby.description }}</p>
-      {% if baby.age > 0 %}
-        <p class="white-text">Age: {{ baby.age }}</p>
-      {% else %}
-        <p class="white-text">Age: Little Baby</p>
-      {% endif %}
-    </div>
-    </a>
-  </div>
-{% endfor %}
-
-{% endblock %}
+<div class="one">
+    <h1 class="indigo-text">My Babies</h1>
+</div>
+    
+    {% for baby in babies %}
+      <div class="card">
+        <a href="{% url 'detail' baby.id %}">
+        <div class="card-content indigo lighten-2">
+          <span class="card-title white-text">{{ baby.name }}</span>
+          <p class="white-text">Description: {{ baby.description }}</p>
+          {% if baby.age > 0 %}
+            <p class="white-text">Age: {{ baby.age }}</p>
+          {% else %}
+            <p class="white-text">Age: Little Baby</p>
+          {% endif %}
+        </div>
+        </a>
+      </div>
+    {% endfor %}
+    
+    {% endblock %}

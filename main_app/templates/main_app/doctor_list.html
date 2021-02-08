@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="indigo-text">List of Doctors</h1>
+<div class="one">
+    <h1 class="indigo-text">List of Doctors</h1>
+</div>
 
 {% for doctor in doctor_list %}
   <a href="{% url 'doctors_detail' doctor.id %}">
