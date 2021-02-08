@@ -5,14 +5,13 @@ from django.contrib.auth.models import User
 import os
 
 MEALS = (
-    ('B', 'Breakfast'),
-    ('L', 'Lunch'),
-    ('D', 'Dinner')
+    ('M', 'Moms Milk'),
+    ('F', 'Formula')
 )
 
 DIAPERS = (
-    ('1', 'No. ONE'),
-    ('2', 'No. TWO')
+    ('1', 'No. One'),
+    ('2', 'No. Two')
 )
 
 class Doctor(models.Model):
@@ -39,10 +38,10 @@ class Baby(models.Model):
         return reverse('detail', kwargs={'baby_id': self.id})
 
     def fed_for_today(self):
-        return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
+        return self.feeding_set.filter(date=date.today()).count() >= 4
 
     def changed_for_today(self):
-        return self.changing_set.filter(date=date.today()).count() >= 2
+        return self.changing_set.filter(date=date.today()).count() >= 1
     
     class Meta:
         ordering = ['id']

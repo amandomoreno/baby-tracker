@@ -6,6 +6,15 @@ body {
     padding: 0 10rem 0 10rem 0;
 }
 
+#dropdown-btn {
+    width: 8.5rem;
+}
+
+#menu {
+    margin: 0 auto;
+    padding: 0 40px 0 40px;
+}
+
 main {
     flex: 1 0 auto;
     margin: 0 40px 0 40px 0;
@@ -23,7 +32,7 @@ main {
 
 h1 {
     font-size: 24px;
-    margin: 1.5rem auto;
+    margin: .5rem auto;
 }
 
 .btns {

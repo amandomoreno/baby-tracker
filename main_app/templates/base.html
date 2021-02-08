@@ -14,25 +14,27 @@
 <body>
   <header>
     <ul id="dropdown1" class="dropdown-content">
-        <li><a class="indigo-text" href="{% url 'about' %}">About</a></li>
-          {% if user.is_authenticated %}
-            <li><a class="indigo-text" href="{% url 'doctors_create' %}">Add Doctor</a></li>
-            <li><a class="indigo-text" href="{% url 'doctors_index' %}">Doctors</a></li>
-            <li><a class="indigo-text" href="{% url 'babies_create' %}">Add Baby</a></li>
-            <li><a class="indigo-text" href="{% url 'index' %}">My Babies</a></li>
-            <li><a class="indigo-text" href="{% url 'logout' %}">Log Out</a></li>
-          {% else %}
-            <li><a class="indigo-text" href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a class="indigo-text" href="{% url 'login' %}">Log In</a></li>
-          {% endif %}
+        <div class="link">
+            <li><a class="indigo-text" href="{% url 'about' %}">About</a></li>
+              {% if user.is_authenticated %}
+                <li><a class="links indigo-text" href="{% url 'doctors_create' %}">Add Doctor</a></li>
+                <li><a class="indigo-text" href="{% url 'doctors_index' %}">Doctors</a></li>
+                <li><a class="indigo-text" href="{% url 'babies_create' %}">Add Baby</a></li>
+                <li><a class="indigo-text" href="{% url 'index' %}">My Babies</a></li>
+                <li><a class="pink-text" href="{% url 'logout' %}">Log Out</a></li>
+              {% else %}
+                <li><a class="indigo-text" href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a class="indigo-text" href="{% url 'login' %}">Log In</a></li>
+              {% endif %}
+        </div>
       </ul>
     <nav>
       <div class="nav-wrapper indigo lighten-4">
         <ul>
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Baby Tracker</a></li>
         </ul>
-        <ul class="right">
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Menu<i class="material-icons right"></i></a></li>
+        <ul id="dropdown-btn" class="right">
+            <li><a id="menu" class="dropdown-trigger" href="#!" data-target="dropdown1">Menu<i class="material-icons right"></i></a></li>
         </ul>
       </div>
     </nav>
