@@ -24,5 +24,6 @@ babyHub is an app that helps you track your babies feedings and diaper changes, 
 ### Technology: Python, Django, (AWS) Amazon S3, CSS, Trello, Whimsical, LucidChart, Materialize, GitHub, PostgreSQL.
 
 
-<!-- ### Icebox:
-- [ ] Show activities on "All Destinations view"  -->
+### Icebox:
+- [ ] Have oboarding for the home and about views  
+- [ ] Have oboarding for the home and about views  
