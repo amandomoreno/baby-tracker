@@ -10,13 +10,15 @@ babyHub is an app that helps you track your babies feedings and diaper changes, 
 
 ### Here's the final result. Enjoy!
 
-<!-- ![App Index view](https://i.imgur.com/O0dbbe1.png)
+![App Add Doctor view](https://i.imgur.com/O0dbbe1.png)
 
-![App New destination](https://i.imgur.com/TOf2O5U.png)
+![App Doctors view](https://i.imgur.com/TOf2O5U.png)
 
-![App New Activity](https://i.imgur.com/J0Er1c5.png)
+![App Add Baby view](https://i.imgur.com/J0Er1c5.png)
 
-![App Show view](https://i.imgur.com/Y13GTcY.png) -->
+![App Baby view](https://i.imgur.com/Y13GTcY.png)
+
+![App Baby profile](https://i.imgur.com/Y13GTcY.png)
 
 
 ### Get Started: [Visit babyHub app](https://<app-name-here>.herokuapp.com/)
@@ -26,4 +28,7 @@ babyHub is an app that helps you track your babies feedings and diaper changes, 
 
 ### Icebox:
 - [ ] Have oboarding for the home and about views  
-- [ ] Have oboarding for the home and about views  
+- [ ] Have description and contact info for Doctors
+- [ ] In profile- Having a better UX for Feeding and Changing
+- [ ] In profile- Having the ability to remove doctors from baby's profile
+- [ ] Responsive design
