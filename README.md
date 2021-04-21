@@ -3,7 +3,10 @@
 babyHub is an app that helps you track your babies feedings and diaper changes, as well as adding and managing your baby's doctors.
 
 
-#### A quick look into my idea: 
+### Get Started: [Visit babyHub app](https://baby-hub.herokuapp.com/accounts/login/)
+
+
+### A quick look into my idea: 
 [Trello Board](https://trello.com/b/yPculj0T/babyhub) 
 ![Trello Board Img](https://i.imgur.com/gD4gEir.png)   
 
@@ -24,7 +27,6 @@ babyHub is an app that helps you track your babies feedings and diaper changes, 
 
 ![App Baby profile3](https://i.imgur.com/QEp6AuK.png)
 
-### Get Started: [Visit babyHub app](https://baby-hub.herokuapp.com/accounts/login/)
 
 ### Technology: Python, Django, (AWS) Amazon S3, CSS, Trello, Whimsical, LucidChart, Materialize, GitHub, PostgreSQL.
 

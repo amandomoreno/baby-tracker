@@ -87,3 +87,7 @@ class Photo(models.Model):
 
 def some_function(request):
     my_key = os.environ['SECRET_KEY']
+
+
+
+Scott M Spenhoff
